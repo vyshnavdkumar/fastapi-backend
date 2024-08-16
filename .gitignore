@@ -1,0 +1,31 @@
+# Python environment files
+*.env
+.env
+
+# Virtual environment
+venv/
+.env/
+
+# Python specific
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.pyc
+
+# VS Code
+.vscode/
+
+# Pytest cache
+.pytest_cache/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE specific
+.idea/
