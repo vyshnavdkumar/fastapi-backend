@@ -38,13 +38,11 @@ metadata.create_all(engine)
 
 # Pydantic models
 class UserIn(BaseModel):
-    name: str
     username: str
     password: str
 
 class UserOut(BaseModel):
     id: int
-    name: str
     username: str
 
 class UserUpdate(BaseModel):
@@ -124,7 +122,7 @@ async def update_user(user_id: int, user: UserUpdate, db: Session = Depends(get_
 async def delete_user(user_id: int, db: Session = Depends(get_db)):
     query = users.delete().where(users.c.id == user_id)
     await database.execute(query)
-    return {"id": user_id, "name": "", "username": ""}
+    return {"id": user_id, "username": ""}
 
 @app.post("/login/")
 async def login(user: UserIn, db: Session = Depends(get_db)):
